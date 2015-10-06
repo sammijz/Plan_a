@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Bare - Start Bootstrap Template</title>
+    <!-- circle starts -->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+        <!--[if IE]><script type="text/javascript" src="excanvas.js"></script><![endif]-->
+        <script src="jQuery-Knob-master/dist/jquery.knob.min.js"></script>
+        <script>
+            $(function($) {
+
+                $(".knob").knob({
+                    change : function (value) {
+                        //console.log("change : " + value);
+                    },
+                    release : function (value) {
+                        //console.log(this.$.attr('value'));
+                        console.log("release : " + value);
+                    },
+                    cancel : function () {
+                        console.log("cancel : ", this);
+                    },
+                    /*format : function (value) {
+                        return value + '%';
+                    },*/
+                    draw : function () {
+
+                        // "tron" case
+                        if(this.$.data('skin') == 'tron') {
+
+                            this.cursorExt = 0.3;
+
+                            var a = this.arc(this.cv)  // Arc
+                                , pa                   // Previous arc
+                                , r = 1;
+
+                            this.g.lineWidth = this.lineWidth;
+
+                            if (this.o.displayPrevious) {
+                                pa = this.arc(this.v);
+                                this.g.beginPath();
+                                this.g.strokeStyle = this.pColor;
+                                this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, pa.s, pa.e, pa.d);
+                                this.g.stroke();
+                            }
+
+                            this.g.beginPath();
+                            this.g.strokeStyle = r ? this.o.fgColor : this.fgColor ;
+                            this.g.arc(this.xy, this.xy, this.radius - this.lineWidth, a.s, a.e, a.d);
+                            this.g.stroke();
+
+                            this.g.lineWidth = 2;
+                            this.g.beginPath();
+                            this.g.strokeStyle = this.o.fgColor;
+                            this.g.arc( this.xy, this.xy, this.radius - this.lineWidth + 1 + this.lineWidth * 2 / 3, 0, 2 * Math.PI, false);
+                            this.g.stroke();
+
+                            return false;
+                        }
+                    }
+                });
+
+                // Example of infinite knob, iPod click wheel
+                var v, up=0,down=0,i=0
+                    ,$idir = $("div.idir")
+                    ,$ival = $("div.ival")
+                    ,incr = function() { i++; $idir.show().html("+").fadeOut(); $ival.html(i); }
+                    ,decr = function() { i--; $idir.show().html("-").fadeOut(); $ival.html(i); };
+                $("input.infinite").knob(
+                                    {
+                                    min : 0
+                                    , max : 20
+                                    , stopper : false
+                                    , change : function () {
+                                                    if(v > this.cv){
+                                                        if(up){
+                                                            decr();
+                                                            up=0;
+                                                        }else{up=1;down=0;}
+                                                    } else {
+                                                        if(v < this.cv){
+                                                            if(down){
+                                                                incr();
+                                                                down=0;
+                                                            }else{down=1;up=0;}
+                                                        }
+                                                    }
+                                                    v = this.cv;
+                                                }
+                                    });
+            });
+        </script>
+    <!-- circle ends -->
+    
+    
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+    <!-- Custom CSS -->
+    <link href="css/4setup1.css" rel="stylesheet">
+    <link href="css/knot.css" rel="stylesheet">
+    <!-- Font CSS -->
+    
+    <link href='https://fonts.googleapis.com/css?family=Josefin+Sans:100,300,400,100italic,300italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+        <!-- /.container -->
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<div class="col-lg-12 text-center"><h1 class="nav_s">SET UP</h1></div>
+</nav>
+
+    <!-- Page Content -->
+    <div class="container">
+            <div class="col-lg-12 text-left">
+                <h5 class="set_text" >Please swipe the circle to set up your cycle:</h5>
+            </div>
+     <!-- circle -->
+     <div class="demo">
+     <input class="knob" data-angleOffset=0 data-linecap=round value="35" data-thickness=".2" data-fgColor="#6EE3EF " data-max="40">
+     </div>      
+        
+     <!--circle ends -->
+            <div class="col-lg-12 text-left">
+                <p class="set_text2" >Menstrual cycle length: the number of days from when your period starts to the day 
+before the next one begins.</p>
+            </div>
+        
+ <!-- button test starts --> 
+  <div id="whole_button"  class="btn-group btn-group-justified ">
+      <div id="inner_button" class="btn-group btn-group-justified ">
+    <a href="#" id="button_next" class="btn btn-default btn-lg">NEXT</a>
+    <a href="#"  id="button_skip"class="btn btn-default btn-lg">SKIP</a>
+  </div>
+  <!-- button test ends -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+body{
+    background-color: #6EE3EF;
+}
+
+.welcome{
+padding-top:150px;
+padding-left:10px;
+font-size:42.26px ;
+color: white ;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 400;
+}
+
+.welcome_c{
+font-size:35px ;
+color:white ;
+font-family: 'Josefin Sans', sans-serif;
+font-weight:300;
+opacity: 0.8;
+padding-left:10px;
+line-height: 1.2;}
+
+.carousel-indicators {
+    bottom: 35px !important;
+
+}
+
+.carousel-indicators .active {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 3px !important;
+    background-color: #fff;
+    opacity:1.0 !important;
+    
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: white !important;
+    border:none !important;
+    border-radius: 10px;
+    opacity:0.5
+}

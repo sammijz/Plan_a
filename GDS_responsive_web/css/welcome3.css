@@ -1,0 +1,74 @@
+body{
+    background-color: #00D6BD;
+}
+
+.welcome{
+padding-top:180px;
+padding-left:10px;
+font-size:42.26px ;
+color: white ;
+font-family: 'Josefin Sans', sans-serif;
+font-weight: 400;
+}
+
+.welcome_c{
+font-size:35px ;
+color:white ;
+font-family: 'Josefin Sans', sans-serif;
+font-weight:100;
+opacity: 0.8;
+padding-left:10px;
+line-height: 1.2;}
+
+.carousel-indicators {
+    bottom: 35px !important;
+
+}
+
+.carousel-indicators .active {
+    width: 18px !important;
+    height: 18px !important;
+    margin: 3px !important;
+    background-color: #fff;
+    opacity:1.0 !important;
+    
+}
+
+.carousel-indicators li {
+    display: inline-block;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: white !important;
+    border:none !important;
+    border-radius: 10px;
+    opacity:0.5
+}
+.cb{
+    margin:30px;
+}
+btn:hover{
+    color:red !important;
+    
+}
+.btn-group-lg > .btn, .btn-lg {
+    padding: 12px 25px;
+    font-size: 21px;
+    line-height: 1.33333;
+    border-radius: 27px;
+    color: #00D6BD !important;
+    border-color:none !important;
+    border-style:none !important;
+    font-family: 'Josefin Sans', sans-serif;
+    -webkit-box-shadow: 1px 2px 22px rgba(50, 57, 50, 0.4);
+    -moz-box-shadow:    1px 2px 22px rgba(50, 57, 50, 0.4);
+    box-shadow:         1px 2px 22px rgba(50, 57, 50, 0.4);
+}
+.btn-default {
+    color: #333;
+    background-color: #FFF;
+    border-color:none !important;
+    border-style:none !important;
+}
